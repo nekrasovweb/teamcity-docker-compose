@@ -99,3 +99,9 @@ CHANGELOG
 * Fix "Permission denied" error
 * Add Node 14 agent
 * Makefile update
+
+#### ver.: 0.7.1 (29.11.2020)
+* Add /.idea/ in gitignore
+* Teamcity-server version in .env
+* Postgres version 9.5 -> 11
+* Update Makefile, README.md
