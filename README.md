@@ -65,7 +65,7 @@ After initialisation Web Interface will be available on `https://yourdockerhost/
 
 ### Setup DB
 
-Open `https://yourdockerhost/`
+Open `https://yourdockerhost/` or `http://localhost`
 
 Set PostgreSQL as database type, download `JDBC driver`
 

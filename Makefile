@@ -6,7 +6,8 @@ all: help  # Show this message
 
 # update & upgrade TC
 update: stop down build uplog  ## Update images
-up: acme uplog  ## Up services
+#up: acme uplog  ## Up services
+up: uplog  ## Up services
 
 # up and show logs
 uplog:  # Up services and show logs
