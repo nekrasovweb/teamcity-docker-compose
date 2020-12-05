@@ -7,8 +7,8 @@ services:
       - web
       - default
     volumes:
-      - "/opt/teamcity/data:/data/teamcity_server/datadir"
-      - "/opt/teamcity/logs:/opt/teamcity/logs"
+      - server_data:/data/teamcity_server/datadir
+      - server_logs:/opt/teamcity/logs
     hostname: ${VIRTUAL_HOST}
     ports:
       - "8111"
@@ -35,7 +35,7 @@ services:
     #     if you need docker inside the agent
     #     (http://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - /var/run/docker.sock:/var/run/docker.sock
     labels:
       - "traefik.enable=false"
     logging:
@@ -47,8 +47,8 @@ services:
   postgres:
     build: ./postgres
     volumes:
-      - "/opt/teamcity/pg_data:/var/lib/postgresql/data"
-      - "/opt/teamcity/pg_backup:/backups"
+      - postgres_pg_data:/var/lib/postgresql/data
+      - postgres_pg_backup:/backups
     env_file: .env
     labels:
       - "traefik.enable=false"
@@ -84,3 +84,9 @@ services:
 networks:
   web:
     external: true
+
+volumes:
+  server_data:
+  server_logs:
+  postgres_pg_data:
+  postgres_pg_backup:
